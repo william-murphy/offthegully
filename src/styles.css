@@ -57,6 +57,11 @@ section {
     margin: 0 20px;
 }
 
+/* Style lists */
+ul {
+    list-style-type: none;
+}
+
 /* Style links */
 a {
     color: #007bff;
