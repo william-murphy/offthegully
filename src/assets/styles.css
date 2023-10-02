@@ -57,6 +57,10 @@ section {
     margin: 0 20px;
 }
 
+.about img {
+    border-radius: 50%;
+}
+
 /* Style lists */
 ul {
     list-style-type: none;
