@@ -6,7 +6,7 @@ body, main, section, article, figure, h1, h2, h3, p, ul, li, img {
 /* Set a background color and default font */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff5e5;
+    background-color: #333;
     line-height: 1.6;
     color: #333;
 }
@@ -40,6 +40,7 @@ nav ul li a {
 
 /* Style the main content */
 main {
+    background-color: #fff5e5;
     padding: 0 15%;
 }
 
