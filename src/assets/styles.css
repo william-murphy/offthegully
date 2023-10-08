@@ -3,11 +3,17 @@ body, main, section, article, figure, h1, h2, h3, p, ul, li, img {
     padding: 0;
 }
 
+/* Set the global font */
+@font-face {
+    font-family: "Libre_Baskerville";
+    src: url("./Libre_Baskerville/LibreBaskerville-Regular.ttf") format("truetype")
+}
+
 /* Set a background color and default font */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Libre_Baskerville";
     background-color: #333;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #333;
 }
 
