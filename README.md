@@ -11,3 +11,8 @@ My personal website.
 2. From this directory, run `docker build -t off-the-gully .`
 3. Run `docker run -p 8080:8080 off-the-gully`
 4. To stop it, press ctrl+c
+
+# Running with Docker Compose
+1. Install Docker / Docker Compose
+2. From this directory, run `docker compose up`
+3. To stop it, press ctrl+c
