@@ -47,11 +47,11 @@ nav ul li a {
 /* Style the main content */
 main {
     background-color: #fff5e5;
-    padding: 0 15%;
+    padding: 0 15% 40px 15%;
 }
 
 section {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
 }
 
 .container {
