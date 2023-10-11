@@ -4,7 +4,7 @@ COPY nginx off-the-gully/nginx/
 
 COPY src off-the-gully/src/
 
-EXPOSE 8080
+EXPOSE 80
 
 WORKDIR /off-the-gully
 
