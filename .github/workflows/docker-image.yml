@@ -11,4 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Stop the current docker container
-      run: docker compose up
+      run: docker stop off-the-gully
+    - name: Rebuild the image
+      run: docker build -t off-the-gully .
+    - name: Run a container with the new image
+      run: docker run -p 80:80 -d --name off-the-gully --rm off-the-gully

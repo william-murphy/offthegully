@@ -9,8 +9,8 @@ My personal website.
 # Running with Docker
 1. Install Docker
 2. From this directory, run `docker build -t off-the-gully .`
-3. Run `docker run -p 80:80 off-the-gully`
-4. To stop it, press ctrl+c
+3. Run `docker run -p 80:80 -d --name off-the-gully --rm off-the-gully`
+4. To stop it, press ctrl+c or run `docker stop off-the-gully`
 
 # Running with Docker Compose
 1. Install Docker / Docker Compose
