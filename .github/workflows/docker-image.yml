@@ -10,7 +10,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ~/off-the-gully
+        working-directory: /root/off-the-gully
 
     steps:
     - uses: actions/checkout@v3
