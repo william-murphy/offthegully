@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Stop the current docker container
       run: docker stop off-the-gully
-    # - name: Get the latest code from git repo
-    #   run: git pull origin main --rebase --prune
+    - name: Get the latest code from git repo
+      run: git pull origin main --rebase --prune
     - name: Rebuild the image
       run: docker build -t off-the-gully .
     - name: Run a container with the new image
