@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Stop the current docker container
-      run: docker stop off-the-gully
+      run: docker compose down
     - name: Rebuild and start container with changes
       run: docker compose up --build -d
     - name: Clean up docker containers
