@@ -12,7 +12,7 @@ jobs:
     - name: Stop the current docker container
       run: docker stop off-the-gully
     - name: Rebuild and start container with changes
-      run: docker compose up --name off-the-gully --build -d
+      run: docker compose up --build -d
     - name: Clean up docker containers
       run: docker system prune -f
     - name: Clean up docker volumes
