@@ -7,18 +7,17 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-
-    defaults:
-      run:
-        working-directory: /root/off-the-gully
-
     steps:
     - uses: actions/checkout@v3
     - name: Stop the current docker container
       run: docker stop off-the-gully
-    - name: Get the latest code from git repo
-      run: git pull origin main --rebase --prune
-    - name: Rebuild the image
-      run: docker build -t off-the-gully .
-    - name: Run a container with the new image
-      run: docker run -p 80:80 -d --name off-the-gully --rm off-the-gully
+    - name: Rebuild and start container with changes
+      run: docker compose up --name off-the-gully --build -d
+    - name: Clean up docker containers
+      run: docker system prune -f
+    - name: Clean up docker volumes
+      run: docker volume prune -f
+    # - name: Rebuild the image
+    #   run: docker build -t off-the-gully .
+    # - name: Run a container with the new image
+    #   run: docker run -p 80:80 -d --name off-the-gully --rm off-the-gully
