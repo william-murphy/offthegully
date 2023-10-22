@@ -38,7 +38,7 @@
             <div class="container">
                 <h2>Roomserve</h2>
                 <small><a href="https://github.com/william-murphy/roomserve">Source Code</a></small>
-                <p>Roomserve is a backend API + database for a room reservation system. The API is written in Go using the Chi library for routing and the database is PostgreSQL. The main purpose of this project for me was to learn Go. It still needs tests which I want to tackle soon. I also want to build a frontend for the room reservation system. The backend features user authentication with JWTs, administrator-specific endpoints for system configuration, and CRUD operations for buildings, floors, rooms, and reservations. The API is deployed using Docker and I also set up a testing pipeline in Jenkins for it.</p>
+                <p>Roomserve is a backend API + database for a room reservation system. The API is written in Go using the Chi library for routing and the database is PostgreSQL. The main purpose of this project for me was to learn Go. It has some tests written with the Go testing library, and I created a pipeline using Github Actions that runs the tests on any push and succeeds / fails based on the outcome of the tests. The tests are run in one docker container and a postgres instance is spun up in a seperate container, and the runner for the pipeline resides on a DigitalOcean droplet. I still want to build a frontend for the room reservation system. The backend features user authentication with JWTs, administrator-specific endpoints for system configuration, and CRUD operations for buildings, floors, rooms, and reservations. The API is deployed using Docker and I also set up a testing pipeline in Jenkins for it.</p>
             </div>
         </section>
 
@@ -46,7 +46,7 @@
             <div class="container">
                 <h2>Off The Gully</h2>
                 <small><a href="https://github.com/william-murphy/off-the-gully">Source Code</a></small>
-                <p>What you're currently looking at. The source code is on Github. For my job I use a lot of React and other newer frontend libraries. Those frameworks do all sorts of cool things but it gets tiresome and often frustrating with so much going on under the hood. That's why I decided to create my personal website out of simple, static HTML pages with regular CSS styling. Writing plain HTML and CSS is actually pretty enjoyable, and extremely cathartic. I also used building this website as an opportunity to learn some basic Nginx, Docker, and web hosting.</p>
+                <p>What you're currently looking at. The source code is on Github. For my job I use a lot of React and other newer frontend libraries. Those frameworks do all sorts of cool things but it gets tiresome and often frustrating with so much going on under the hood. That's why I decided to create my personal website out of simple, static HTML pages with regular CSS styling. Writing plain HTML and CSS is actually pretty enjoyable, and extremely cathartic. I also used building this website as an opportunity to learn some basic Nginx, Docker, web hosting, and CI/CD.</p>
             </div>
         </section>
     

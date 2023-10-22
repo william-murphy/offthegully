@@ -28,6 +28,18 @@
     <main>
         <section>
             <div class="container">
+                <h2>Roomserve and Off The Gully CI/CD pipelines are done</h2>
+                <small>Published on Sunday October 22nd, 2023</small>
+                <p>After a lot of trial and error, I finally figured out how to set up the CI/CD pipelines I wanted for roomserve and this website.</p>
+                <p>The roomserve pipeline, which is a room reservation application backend I've been working on, uses Github Actions and Docker to spin up a test container and a database container, run tests, and report the outcome whenever there is a push to any branch. The pipeline is running on a DigitalOcean droplet.</p>
+                <p>The off-the-gully pipeline, which is this website, just deploys any changes to this website when I push to the main branch. This was also accomplished with Github Actions and Docker, and run on a DigitalOcean droplet.</p>
+                <p>I had a free trial of DigitalOcean that gives me $200 worth of computing for a month for free, after that, I'm not really sure what happens. I can't imagine the costs will be crazy, but if they are I may need to shutdown the CI/CD runners to save on computing costs, so that I can continue to host this website.</p>
+                <p>Yo aprendo espanol a nuevo por dos o tres meses, entonces yo quiero practicar a escribir. Para aprender y practicar, yo uso Duolingo, y a veces yo leo CNN en espanol, y a veces yo escucho a los podcasts en espanol. Mis amigos y yo hemos estado discutiendo un viaje a Espana y por eso yo quiero aprender espanol. Yo aprendi espanol por seis anos en la escuela secundaria, pero en la universidad yo no use nada de espanol asi que olvide la mayoria.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
                 <h2>Offthegully.com is live!</h2>
                 <small>Published on Tuesday October 17th, 2023</small>
                 <p>I finally was able to work out hosting this website. What I did was buy the domain from godaddy, then got a small $5 droplet from DigitalOcean, created NGINX config for hosting the site, then dockerized the nginx, and ran the docker container on the droplet. The next thing to do is to set up a Jenkins pipeline to automatically deploy my website changes to the droplet.</p>
