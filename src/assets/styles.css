@@ -59,6 +59,11 @@ section {
     padding: 0 20px;
 }
 
+.post {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 .about figure {
     float: right;
     margin: 0 20px;
