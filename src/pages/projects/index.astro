@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Main.astro';
+---
+
+<Layout title="Off the Gully">
+    <section id="java-zombies">
+        <div class="container">
+            <h2>Java Zombies</h2>
+            <small><a href="https://github.com/william-murphy/java-zombies">Source Code</a></small>
+            <p>This project is something I started work on a few months ago. I am going to tentatively call it a work in progress but I'm not sure if I'll ever get around to adding more features. It is a two-dimensional zombie survival game written in Java using only the standard library. It features two-dimensional top-down graphics, a tile based map system, entity / entity collision, entity / tile collision, and zombie pathfinding with the A* search algorithm. It requires Java >=19 to play. The jar file can be found on the github repo under <code>/versions</code>. The highest round I am aware of someone getting to is 14. There is an upper limit on the round you can achieve which I need to fix, because the rate at which you attain ammo stays the same but the rate at which zombies spawn increases exponentially.</p>
+        </div>
+    </section>
+    
+    <section id="roomserve">
+        <div class="container">
+            <h2>Roomserve</h2>
+            <small><a href="https://github.com/william-murphy/roomserve">Source Code</a></small>
+            <p>Roomserve is a backend API + database for a room reservation system. The API is written in Go using the Chi library for routing and the database is PostgreSQL. The main purpose of this project for me was to learn Go. It has some tests written with the Go testing library, and I created a pipeline using Github Actions that runs the tests on any push and succeeds / fails based on the outcome of the tests. The tests are run in one docker container and a postgres instance is spun up in a seperate container, and the runner for the pipeline resides on a DigitalOcean droplet. I still want to build a frontend for the room reservation system. The backend features user authentication with JWTs, administrator-specific endpoints for system configuration, and CRUD operations for buildings, floors, rooms, and reservations. The API is deployed using Docker and I also set up a testing pipeline in Jenkins for it.</p>
+        </div>
+    </section>
+    
+    <section id="off-the-gully">
+        <div class="container">
+            <h2>Off The Gully</h2>
+            <small><a href="https://github.com/william-murphy/off-the-gully">Source Code</a></small>
+            <p>What you're currently looking at. The source code is on Github. For my job I use a lot of React and other newer frontend libraries. Those frameworks do all sorts of cool things but it gets tiresome and often frustrating with so much going on under the hood. That's why I decided to create my personal website out of simple, static HTML pages with regular CSS styling. Writing plain HTML and CSS is actually pretty enjoyable, and extremely cathartic. I also used building this website as an opportunity to learn some basic Nginx, Docker, web hosting, and CI/CD.</p>
+        </div>
+    </section>
+    
+    <section id="nba-daily-lineups">
+        <div class="container">
+            <h2>NBA Daily Lineups</h2>
+            <small><a href="https://github.com/william-murphy/nba-daily-lineups">Source Code</a></small>
+            <p>This is a small project I originally made for a friend who wanted to scrape data for a predictive model. This project is written in Python and uses the BeautifulSoup library to scrape rotowire.com and get the injury report / starting lineups for NBA teams in a key: value format.</p>
+        </div>
+    </section>
+    
+    <section id="discord-deleter">
+        <div class="container">
+            <h2>Discord Deleter</h2>
+            <small><a href="https://github.com/william-murphy/discord-deleter">Source Code</a></small>
+            <p>This project is a simple Discord bot that will listen for a command which is a series of words and then remove every message that contains those words in a text channel. I figured it could be used by moderators to remove inappropriate messages from their server, although it can run very slowly if it is run on a text channel with a lot of messages.</p>
+        </div>
+    </section>
+</Layout>

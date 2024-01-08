@@ -3,3 +3,6 @@
 # nginx
 nginx/logs/*.log
 !nginx/logs/.gitkeep
+
+# astro
+node_modules
