@@ -1,72 +1,21 @@
 ---
 import Layout from '../../layouts/Main.astro';
+import { getCollection } from 'astro:content';
+
+const blog = await getCollection('blog')
+blog.reverse()
 ---
 
 <Layout title="Off the Gully">
-    <section>
-        <div class="container">
-            <h2>Todavia Aprendo Espanol</h2>
-            <small>Published on Monday November 20th, 2023</small>
-            <div class="post">
-                <p>Hola, voy a escribir este correo en espanol. Si no entiendes, lo siento! Yo todavia aprendo espanol, y creo que estoy mejorando.</p>
-                <p>Receientemente, he tenido unas conversaciones con hispanohablantes. La primera, yo fui a una taller de mecanico por ayuda con una luz de motor. Cuando espere, yo hable con un hombre se llama Pedro. Pedro es de Colombia pero vive en los Estados Unidos. Pedro me dijo que yo debo viajar a Peru porque es muy seguro y tiene una cultura rica.</p>
-                <p>Ademas, yo fui de compras en una tienda de comida y hable en espanol con la cajera y el hombre dentras de mi en la linea. Yo les dije que yo fui a Cancun en Mexico y el hombre, se llama Alex, me dijo que Cancun es un lugar tan turistico y yo necesito viajar a lugares diferentes. Yo estuve de acuerdo con el.</p>
-                <p>Yo hable con un hombre se llama Luis de Colombia. Luis trabaja en la cafeteria en la oficina. Yo he hablado con Luis antes, pero nunca en espanol. Luis me dijo que mi accento es bueno, y por eso yo le dije gracias a el.</p>
-                <p>Me encanta el idioma. En mi opinion, conociendo a espanol descubre un mundo nuevo. Creo que es la lenguage segunda mas hablado del mundo. Yo estoy emocionado con aprender mas y luego conversar mas con personas diferentes.</p>
+    {blog.map(entry => (
+        <section id={entry.slug}>
+            <div class="container">
+                <h2>{entry.data.title}</h2>
+                <small>Published on {entry.data.published.toDateString()}</small>
+                <div class="post">
+                    {entry.body}
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Film, TV, and What To Do Next?</h2>
-            <small>Published on Saturday November 4th, 2023</small>
-            <div class="post">
-                <p>I recently finished watching <i>Better Call Saul</i>. <b>SPOILERS AHEAD.</b> I thought the Jimmy and Kim plot was awesome all the way up until the ending. Of course, for Breaking Bad to make sense they had to break up by the end of the Better Call Saul timeline. But given that we got snippets of Gene throughout the show I expected them to get back together and have some kind of a happy ending. I guess the end is sort of like that but at the same time Jimmy will be in prison for decades so how can their relationship possibly work.</p>
-                <p>I get that it's a drama and a dark show but seriously it wouldn't be the worst thing in the world if the only romance plot in the whole show actually got a cheerful resolution. The ending felt very rushed, and Gene starting scams again felt really out of place. In the span of I think it was 4 episodes we're introduced to three brand new characters. Then Gene/Saul/Jimmy go to trial and somehow turn a life + 150 year sentence into 7 years? It just felt unrealistic. Yes Jimmy is a great lawyer in the show but he's not a magician.</p>
-                <p>Enough about the ending though, it just sucks that it kind of spoiled what was a fantastic series. Nacho, Lalo, Hector, the twins - all 10/10 characters. Lalo especially was super cool. Although he really messed up at the end somehow letting a 40+ year old Gus move fast enough to kick out a power cord before he could shoot him, despite the fact that Lalo had just smoked 6 of Gus's guards in like 2 seconds.</p>
-                <p>Nacho Varga. Nacho was absolutely awesome. I wish there had been more scenes of him and Jimmy because I thought they had great chemistry. When Nacho dies was the saddest I was for any death. But at the same time I thought his death fit him. And his escape from the Salamancas in Mexico were some of the best scenes in the entire show. There's more to say but I don't want this blog post to get huge.</p>
-                <p>I also watched Platoon the other night. I really enjoyed the movie, but when I read that it won 4 Oscars, including Best Picture, I was surprised. <b>SPOILERS.</b> It just didn't leave that big of an impression on me. The character development, outside of maybe Elias, felt pretty rushed. The entire plot is basically just 3 fights in the jungle that all feel pretty much the exact same. Charlie Sheen's narration felt really shallow as well, like he was just saying a bunch of war cliche's without any substance. Sgt. Elias's death scene was awesome though. Him running from the NVA, riddled with bullets, while the chopper above makes passes shooting the NVA and Pvt Taylor sees Barnes's expression and knows he killed him.</p>
-                <p>Barnes shooting Elias was another great scene. I thought Willem Dafoe was just great in this movie in general, but his facial expressions when he realizes Barnes is going to shoot him in the jungle are top notch. The makeup in this movie was quality as well. Barnes's scar was absolutely mental but looked real. I wish we had got more scenes of Barnes being a lunatic, he kind of reminds me of a less composed Captain Willard from Apocalypse Now.</p>
-                <p>Anyway, I have no other side projects left to work on, I'm not quite sure what to do programming-wise. I really want to get into mobile development. I'm just waiting for an idea to come to me. I'm thinking of writing java zombies in Swift and trying to release it on the app store. At the same time, I want to make something new. We shall see.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Roomserve and Off The Gully CI/CD pipelines are done</h2>
-            <small>Published on Sunday October 22nd, 2023</small>
-            <div class="post">
-                <p>After a lot of trial and error, I finally figured out how to set up the CI/CD pipelines I wanted for roomserve and this website.</p>
-                <p>The roomserve pipeline, which is a room reservation application backend I've been working on, uses Github Actions and Docker to spin up a test container and a database container, run tests, and report the outcome whenever there is a push to any branch. The pipeline is running on a DigitalOcean droplet.</p>
-                <p>The off-the-gully pipeline, which is this website, just deploys any changes to this website when I push to the main branch. This was also accomplished with Github Actions and Docker, and run on a DigitalOcean droplet.</p>
-                <p>I had a free trial of DigitalOcean that gives me $200 worth of computing for a month for free, after that, I'm not really sure what happens. I can't imagine the costs will be crazy, but if they are I may need to shutdown the CI/CD runners to save on computing costs, so that I can continue to host this website.</p>
-                <p>Yo aprendo espanol a nuevo por dos o tres meses, entonces yo quiero practicar a escribir. Para aprender y practicar, yo uso Duolingo, y a veces yo leo CNN en espanol, y a veces yo escucho a los podcasts en espanol. Mis amigos y yo hemos estado discutiendo un viaje a Espana y por eso yo quiero aprender espanol. Yo aprendi espanol por seis anos en la escuela secundaria, pero en la universidad yo no use nada de espanol asi que olvide la mayoria.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Offthegully.com is live!</h2>
-            <small>Published on Tuesday October 17th, 2023</small>
-            <div class="post">
-                <p>I finally was able to work out hosting this website. What I did was buy the domain from godaddy, then got a small $5 droplet from DigitalOcean, created NGINX config for hosting the site, then dockerized the nginx, and ran the docker container on the droplet. The next thing to do is to set up a Jenkins pipeline to automatically deploy my website changes to the droplet.</p>
-                <p>In other news, I'm still trying to relearn Spanish. I "learned" Spanish for 6 years in high school but I didn't really learn it, I just coasted. I regret that now because as I've gotten a bit older I've realized there is a hell of a lot more to the world than just the parts that speak English.</p>
-                <p>I travelled to Mexico not that long ago and tried dusting off my Spanish but I was pathetic. I could say basic things and I was able to ask a maintenance woman at the resort who didn't speak English for trash bags, but when it comes to conversation I get lost. Listening is definitely the most difficult part for me. So, I'm practicing speaking / reading out loud and listening as well, with the hope that I will one day be able to hold a conversation with a native speaker.</p>
-                <p>I'm also on week 3 or 4 of a bulk. I hadn't gone to the gym for the entire summer. So now that I've moved into my apartment and I have a gym membership again I'm tracking calories and bulking for the winter. I am slowly going up in weights, focusing heavily on form so as to not repeat past mistakes in the gym and get myself hurt.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>First Blog Post</h2>
-            <small>Published on Monday October 2nd, 2023</small>
-            <div class="post">
-                <p>This is my first blog entry for my personal website. Writing plain HTML and CSS is very relaxing. I still need to figure out where to host this site. Considering its just a static HTML page, maybe I can find some free options.</p>
-            </div>
-        </div>    
-    </section>
+        </section>
+    ))}
 </Layout>

@@ -1,8 +1,27 @@
 ---
 import Layout from '../../layouts/Main.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects')
 ---
 
 <Layout title="Off the Gully">
+    {projects.map(entry => (
+        <section id={entry.slug}>
+            <div class="container">
+                <h2>{entry.data.title}</h2>
+                {entry.data.links.map(link => (
+                    <small><a href={link.url}>{link.text}</a></small>
+                ))}
+                <div>
+                    {entry.body}
+                </div>
+            </div>
+        </section>
+    ))}
+</Layout>
+
+
     <section id="java-zombies">
         <div class="container">
             <h2>Java Zombies</h2>
