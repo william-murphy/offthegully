@@ -5,6 +5,10 @@ links: [
     {
         text: "Source Code",
         url: "https://github.com/william-murphy/java-zombies"
+    },
+    {
+        text: "Downloadable Jar",
+        url: "https://github.com/william-murphy/java-zombies/tree/main/versions"
     }
 ]
 ---

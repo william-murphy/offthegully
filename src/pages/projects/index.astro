@@ -3,6 +3,9 @@ import Layout from '../../layouts/Main.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects')
+projects.sort((a, b) => {
+    return a.data.order > b.data.order ? 1 : -1
+})
 ---
 
 <Layout title="Off the Gully">
@@ -10,8 +13,8 @@ const projects = await getCollection('projects')
         <section id={entry.slug}>
             <div class="container">
                 <h2>{entry.data.title}</h2>
-                {entry.data.links.map(link => (
-                    <small><a href={link.url}>{link.text}</a></small>
+                {entry.data.links.map((link, i) => (
+                    <small><a href={link.url}>{link.text}</a>{i != entry.data.links.length - 1 && " | "}</small>
                 ))}
                 <div>
                     {entry.body}
