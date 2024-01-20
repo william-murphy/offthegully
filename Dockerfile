@@ -1,13 +1,16 @@
-FROM nginx
+# Stage 1: Build Astro website
+FROM node:latest as builder
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
 
-COPY nginx off-the-gully/nginx/
-
-COPY src off-the-gully/src/
-
+# Stage 2: Serve with Nginx
+FROM nginx:latest
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /app/dist .
+# COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
-
-WORKDIR /off-the-gully
-
-CMD ["nginx", "-p", ".", "-c", "nginx/nginx.conf", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
 
 

@@ -6,7 +6,7 @@ const blog = await getCollection('blog')
 blog.reverse()
 ---
 
-<Layout title="Off the Gully">
+<Layout title="Off the Gully | Blog">
     {blog.map(entry => (
         <section id={entry.slug}>
             <div class="container">
