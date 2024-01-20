@@ -7,3 +7,4 @@ nginx/logs/*.log
 # astro
 node_modules
 .astro
+dist
