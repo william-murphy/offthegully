@@ -17,7 +17,3 @@ jobs:
       run: docker system prune -f
     - name: Clean up docker volumes
       run: docker volume prune -f
-    # - name: Rebuild the image
-    #   run: docker build -t off-the-gully .
-    # - name: Run a container with the new image
-    #   run: docker run -p 80:80 -d --name off-the-gully --rm off-the-gully
