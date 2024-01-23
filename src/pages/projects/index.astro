@@ -9,19 +9,22 @@ projects.sort((a, b) => {
 ---
 
 <Layout title="Off the Gully | Projects">
-    {projects.map(entry => (
-        <section id={entry.slug}>
-            <div class="container">
-                <h2>{entry.data.title}</h2>
-                {entry.data.links.map((link, i) => (
-                    <small><a href={link.url}>{link.text}</a>{i != entry.data.links.length - 1 && " | "}</small>
-                ))}
-                <div>
-                    {entry.body}
+    {projects.map(async entry => {
+        const { Content } = await entry.render()
+        return (
+            <section id={entry.slug}>
+                <div class="container">
+                    <h2>{entry.data.title}</h2>
+                    {entry.data.links.map((link, i) => (
+                        <small><a href={link.url}>{link.text}</a>{i != entry.data.links.length - 1 && " | "}</small>
+                    ))}
+                    <div>
+                        <Content />
+                    </div>
                 </div>
-            </div>
-        </section>
-    ))}
+            </section>
+        )
+    })}
 </Layout>
 
 

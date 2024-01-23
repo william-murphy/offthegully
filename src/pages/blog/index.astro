@@ -7,15 +7,18 @@ blog.reverse()
 ---
 
 <Layout title="Off the Gully | Blog">
-    {blog.map(entry => (
-        <section id={entry.slug}>
-            <div class="container">
-                <h2>{entry.data.title}</h2>
-                <small>Published on {entry.data.published.toDateString()}</small>
-                <div class="post">
-                    {entry.body}
+    {blog.map(async entry => {
+        const { Content } = await entry.render()
+        return (
+            <section id={entry.slug}>
+                <div class="container">
+                    <h2>{entry.data.title}</h2>
+                    <small>Published on {entry.data.published.toDateString()}</small>
+                    <div class="post">
+                        <Content />
+                    </div>
                 </div>
-            </div>
-        </section>
-    ))}
+            </section>
+        )
+    })}
 </Layout>
