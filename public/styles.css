@@ -44,6 +44,15 @@ nav ul li a {
     font-weight: bold;
 }
 
+nav figure {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-main {
+    display: inline-block;
+}
+
 /* Style the main content */
 main {
     background-color: #fff5e5;
@@ -67,6 +76,7 @@ section {
 .about figure {
     float: right;
     margin: 0 20px;
+    text-align: center;
 }
 
 .about img {
@@ -97,16 +107,24 @@ footer {
 }
 
 /* Media queries for responsive design (adjust as needed) */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 20px;
-    }
-
+@media only screen and (max-width: 720px) {
     nav ul li {
         margin-right: 10px;
     }
-
-    .container {
-        padding: 0 10px;
+    header {
+        padding: 10px 10%;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+    nav figure {
+        margin: 0;
+        display: none;
+    }
+    main {
+        padding: 0 5% 20px 5%;
+    }
+    .about figure {
+        float: none;
     }
 }
