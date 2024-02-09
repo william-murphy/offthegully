@@ -1,16 +1,11 @@
-# Stage 1: Build Astro website
-FROM node:latest as builder
+FROM node:lts AS build
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm i
 RUN npm run build
 
-# Stage 2: Serve with Nginx
-FROM nginx:latest
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/dist .
-# COPY nginx.conf /etc/nginx/nginx.conf
+FROM httpd:2.4 AS runtime
+COPY --from=build /app/dist /usr/local/apache2/htdocs/
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
 
 
