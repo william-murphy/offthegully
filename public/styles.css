@@ -68,11 +68,6 @@ section {
     padding: 0 20px;
 }
 
-.post {
-    max-height: 420px;
-    overflow-y: auto;
-}
-
 .about figure {
     float: right;
     margin: 0 20px;
@@ -81,6 +76,23 @@ section {
 
 .about img {
     border-radius: 50%;
+}
+
+.preview {
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    content: "";
+    position: relative;
+}
+.preview:before {
+    content: '';
+    width: 100%;
+    height: 100%;    
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(transparent 50px, #fff5e5);
 }
 
 /* Style lists */

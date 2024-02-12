@@ -1,24 +1,27 @@
 ---
-import Layout from '../../layouts/Main.astro';
 import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Main.astro';
 
-const blog = await getCollection('blog')
-blog.reverse()
+const posts = await getCollection('blog')
+posts.sort((a, b) => {
+    return a.data.published < b.data.published ? 1 : -1
+})
 ---
-
 <Layout title="Off the Gully | Blog">
-    {blog.map(async entry => {
-        const { Content } = await entry.render()
+    {posts.map(async post => {
+        const { Content } = await post.render()
         return (
-            <section id={entry.slug}>
+            <section>
                 <div class="container">
-                    <h2>{entry.data.title}</h2>
-                    <small>Published on {entry.data.published.toDateString()}</small>
-                    <div class="post">
+                    <h2>{post.data.title}</h2>
+                    <small>Published on {post.data.published.toDateString()}</small>
+                    <div class="preview">
                         <Content />
                     </div>
+                    <a href={"/blog/" + post.slug}>Read more...</a>
                 </div>
             </section>
         )
     })}
+    </section>
 </Layout>

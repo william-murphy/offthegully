@@ -1,6 +1,6 @@
 ---
 title: "Movie Review: Fargo (1996)"
-published: "01-22-2024"
+published: 2024-01-22
 ---
 **WARNING: SPOILERS!**
 

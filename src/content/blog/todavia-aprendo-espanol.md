@@ -1,6 +1,6 @@
 ---
 title: "Todavia Aprendo Espanol"
-published: "11-20-2023"
+published: 2023-11-20
 ---
 Hola, voy a escribir este correo en espanol. Si no entiendes, lo siento! Yo todavia aprendo espanol, y creo que estoy mejorando.
 Receientemente, he tenido unas conversaciones con hispanohablantes. La primera, yo fui a una taller de mecanico por ayuda con una luz de motor. Cuando espere, yo hable con un hombre se llama Pedro. Pedro es de Colombia pero vive en los Estados Unidos. Pedro me dijo que yo debo viajar a Peru porque es muy seguro y tiene una cultura rica.

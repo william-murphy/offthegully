@@ -1,6 +1,6 @@
 ---
 title: "Switching to Astro Framework, and Other Dev Things"
-published: "01-10-2024"
+published: 2024-01-10
 ---
 It has been a while since I've published a blog entry. The website has been down for some time now, mostly because I didn't want to pay to keep it running. I am making some major changes though. Not really changes that you will see, though. I have switched from pure HTML/CSS to the Astro framework. I originally did not want to use a framework for this website, but I found one that seems very focused on just static content which is all I really want from this website. It has a layout feature, so I don't have to rewrite the header and footer on every page, as well as a neat 'content collections' feature that allows me to write repeated content like these blog posts in a format like markdown and then Astro will turn it into the proper HTML. My hope is that by using Astro it will take out a bunch of the redundant html I was writing.
 

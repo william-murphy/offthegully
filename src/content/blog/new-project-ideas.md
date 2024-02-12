@@ -1,6 +1,6 @@
 ---
 title: "New Project Ideas"
-published: "01-22-2024"
+published: 2024-01-27
 ---
 Recently I've been trying to come up with one project idea every day, no matter how stupid or frivolous the idea may seem. I've been writing them down in my notes app on my phone. At first I was struggling to think of ideas like always, but as I do it more and more I feel like I'm having an easier time thinking creatively about project ideas that interest me.
 

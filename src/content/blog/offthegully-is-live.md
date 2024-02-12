@@ -1,6 +1,6 @@
 ---
 title: "Offthefully.com is Live!"
-published: "10-17-2023"
+published: 2023-10-17
 ---
 I finally was able to work out hosting this website. What I did was buy the domain from godaddy, then got a small $5 droplet from DigitalOcean, created NGINX config for hosting the site, then dockerized the nginx, and ran the docker container on the droplet. The next thing to do is to set up a Jenkins pipeline to automatically deploy my website changes to the droplet.
 

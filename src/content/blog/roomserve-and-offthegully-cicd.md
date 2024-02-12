@@ -1,6 +1,6 @@
 ---
 title: "Roomserve and Off The Gully CI/CD pipelines are Done"
-published: "10-22-2023"
+published: 2023-10-22
 ---
 After a lot of trial and error, I finally figured out how to set up the CI/CD pipelines I wanted for roomserve and this website.
 The roomserve pipeline, which is a room reservation application backend I've been working on, uses Github Actions and Docker to spin up a test container and a database container, run tests, and report the outcome whenever there is a push to any branch. The pipeline is running on a DigitalOcean droplet.

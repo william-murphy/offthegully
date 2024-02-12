@@ -1,6 +1,6 @@
 ---
 title: "Film, TV, and What To Do Next?"
-published: "11-04-2023"
+published: 2023-11-04
 ---
 I recently finished watching *Better Call Saul*. **SPOILERS AHEAD.** I thought the Jimmy and Kim plot was awesome all the way up until the ending. Of course, for Breaking Bad to make sense they had to break up by the end of the Better Call Saul timeline. But given that we got snippets of Gene throughout the show I expected them to get back together and have some kind of a happy ending. I guess the end is sort of like that but at the same time Jimmy will be in prison for decades so how can their relationship possibly work.
 
