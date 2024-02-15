@@ -8,7 +8,7 @@ links: [
     },
     {
         text: "Demo",
-        url: "http://spanish-conjugator.offthegully.com"
+        url: "https://spanish-conjugator.offthegully.com"
     }
 ]
 ---
