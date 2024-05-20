@@ -68,14 +68,12 @@ section {
     padding: 0 20px;
 }
 
-.about figure {
-    float: right;
-    margin: 0 20px;
-    text-align: center;
+.about h2 {
+    font-size: 2em;
 }
 
-.about img {
-    border-radius: 50%;
+.about p {
+    font-size: 1.5em;
 }
 
 .preview {
@@ -93,6 +91,25 @@ section {
     left: 0;
     top: 0;
     background: linear-gradient(transparent 50px, #fff5e5);
+}
+
+.photo-title {
+    text-align: center;
+}
+
+.photo {
+    background-color: #333;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.photo img {
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Style lists */

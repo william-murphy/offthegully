@@ -1,4 +1,4 @@
-# off-the-gully
+# offthegully
 My personal website.
 
 # Running Locally
