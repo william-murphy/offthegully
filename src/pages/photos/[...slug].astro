@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Main.astro';
+
+export async function getStaticPaths() {
+  const photos = await getCollection('photos');
+  return photos.map(photo => ({
+    params: { slug: photo.slug }, props: { photo },
+  }));
+}
+
+const { photo } = Astro.props;
+---
+<Layout title={photo.data.title}>
+    <section id={photo.slug}>
+        <div class="container">
+            <div class="photo-title">
+                <h2>{photo.data.title}</h2>
+                <small>Published on {photo.data.published.toDateString()}</small>
+            </div>
+            <figure class="photo">
+                <img 
+                    src={`/photos/${photo.data.src}`} 
+                    width={photo.data.width} 
+                    height={photo.data.height} 
+                    alt={photo.data.alt} 
+                />
+            </figure>
+        </div>
+    </section>
+</Layout>

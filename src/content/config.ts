@@ -20,7 +20,20 @@ const projects = defineCollection({
     })
 })
 
+const photos = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        published: z.date(),
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        alt: z.string()
+    })
+})
+
 export const collections = {
   'blog': blog,
-  'projects': projects
+  'projects': projects,
+  'photos': photos
 };
