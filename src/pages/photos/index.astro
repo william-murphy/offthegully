@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Main.astro';
+import { getCollection } from 'astro:content';
+
+const photos = await getCollection('photos')
+photos.sort((a, b) => {
+    return a.data.published < b.data.published ? 1 : -1
+})
+---
+
+<Layout title="Off the Gully | Photos">
+    {photos.map(photo => {
+        return (
+            <section id={photo.id}>
+                <div class="container">
+                    <h2><a href={"/photos/" + photo.slug}>{photo.data.title}</a></h2>
+                    <small>Published on {photo.data.published.toDateString()}</small>
+                </div>
+            </section>
+        )
+    })}
+</Layout>
