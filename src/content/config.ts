@@ -20,20 +20,23 @@ const projects = defineCollection({
     })
 })
 
-const photos = defineCollection({
+const galleries = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
         published: z.date(),
-        src: z.string(),
-        width: z.number(),
-        height: z.number(),
-        alt: z.string()
+        photos: z.array(z.object({
+            description: z.string(),
+            src: z.string(),
+            width: z.number(),
+            height: z.number(),
+            alt: z.string()
+        }))        
     })
 })
 
 export const collections = {
   'blog': blog,
   'projects': projects,
-  'photos': photos
+  'galleries': galleries
 };

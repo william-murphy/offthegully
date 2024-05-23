@@ -2,19 +2,20 @@
 import Layout from '../../layouts/Main.astro';
 import { getCollection } from 'astro:content';
 
-const photos = await getCollection('photos')
-photos.sort((a, b) => {
+const galleries = await getCollection('galleries')
+galleries.sort((a, b) => {
     return a.data.published < b.data.published ? 1 : -1
 })
 ---
 
 <Layout title="Off the Gully | Photos">
-    {photos.map(photo => {
+    {galleries.map(gallery => {
         return (
-            <section id={photo.id}>
+            <section id={gallery.id}>
                 <div class="container">
-                    <h2><a href={"/photos/" + photo.slug}>{photo.data.title}</a></h2>
-                    <small>Published on {photo.data.published.toDateString()}</small>
+                    <h2><a href={"/photos/" + gallery.slug}>{gallery.data.title}</a></h2>
+                    <p>{gallery.data.photos.length} photo{gallery.data.photos.length !== 1 && "s"}</p>
+                    <small>Published on {gallery.data.published.toDateString()}</small>
                 </div>
             </section>
         )

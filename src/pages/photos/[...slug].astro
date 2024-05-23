@@ -3,29 +3,32 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Main.astro';
 
 export async function getStaticPaths() {
-  const photos = await getCollection('photos');
-  return photos.map(photo => ({
-    params: { slug: photo.slug }, props: { photo },
+  const galleries = await getCollection('galleries');
+  return galleries.map(gallery => ({
+    params: { slug: gallery.slug }, props: { gallery },
   }));
 }
 
-const { photo } = Astro.props;
+const { gallery } = Astro.props;
 ---
-<Layout title={photo.data.title}>
-    <section id={photo.slug}>
-        <div class="container">
-            <div class="photo-title">
-                <h2>{photo.data.title}</h2>
-                <small>Published on {photo.data.published.toDateString()}</small>
-            </div>
-            <figure class="photo">
-                <img 
-                    src={`/photos/${photo.data.src}`} 
-                    width={photo.data.width} 
-                    height={photo.data.height} 
-                    alt={photo.data.alt} 
-                />
-            </figure>
+<Layout title={gallery.data.title}>
+    <section id={gallery.slug}>
+        <div class="container text-center">
+            <h2>{gallery.data.title}</h2>
+            <small>Published on {gallery.data.published.toDateString()}</small>
+            {gallery.data.photos.map(photo => (
+                <div>
+                    <figure class="photo">
+                        <img 
+                            src={`/photos/${gallery.slug}/${photo.src}`} 
+                            width={photo.width} 
+                            height={photo.height} 
+                            alt={photo.alt} 
+                        />
+                    </figure>
+                    <small>{photo.description}</small>
+                </div>
+            ))}
         </div>
     </section>
 </Layout>
