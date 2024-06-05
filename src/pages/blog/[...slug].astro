@@ -14,6 +14,7 @@ const { Content } = await post.render();
 ---
 <Layout title={post.data.title}>
     <section id={post.slug}>
+        <a href="/blog">&larr; Back to Blog</a>
         <div class="container">
             <h2>{post.data.title}</h2>
             <small>Published on {post.data.published.toDateString()}</small>

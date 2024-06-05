@@ -13,20 +13,21 @@ const { gallery } = Astro.props;
 ---
 <Layout title={gallery.data.title}>
     <section id={gallery.slug}>
+        <a href="/photos">&larr; Back to Photos</a>
         <div class="container text-center">
             <h2>{gallery.data.title}</h2>
             <small>Published on {gallery.data.published.toDateString()}</small>
             {gallery.data.photos.map(photo => (
-                <div>
+                <div class="photo-container">
                     <figure class="photo">
                         <img 
-                            src={`/photos/${gallery.slug}/${photo.src}`} 
+                            src={`https://photos.offthegully.com/${gallery.slug}/${photo.src}`}
                             width={photo.width} 
                             height={photo.height} 
                             alt={photo.alt} 
                         />
                     </figure>
-                    <small>{photo.description}</small>
+                    <caption>{photo.description}</caption>
                 </div>
             ))}
         </div>
