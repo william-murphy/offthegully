@@ -64,7 +64,7 @@ photos: [
         width: 400,
         height: 400,
         alt: "Orange flowers growing on a fence with a tree in the background",
-    }
+    },
     {
         description: "Japanese themed garden, this one is my favorite",
         src: "gardens-3.jpeg",
