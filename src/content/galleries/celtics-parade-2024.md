@@ -1,5 +1,5 @@
 ---
-title: "Boston"
+title: "Boston Celtics 2024 Championship Parade"
 published: 2024-06-22
 photos: [
     {
