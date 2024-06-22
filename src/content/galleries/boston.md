@@ -50,6 +50,27 @@ photos: [
         width: 400,
         height: 400,
         alt: "Snowy street view",
+    },
+    {
+        description: "Bridge near the Fenway victory gardens",
+        src: "gardens-1.jpeg",
+        width: 400,
+        height: 400,
+        alt: "Bridge over pond",
+    },
+    {
+        description: "Some pretty flowers in one of the gardens, according to a nearby gardener each plot is only $40 per year",
+        src: "gardens-2.jpeg",
+        width: 400,
+        height: 400,
+        alt: "Orange flowers growing on a fence with a tree in the background",
+    }
+    {
+        description: "Japanese themed garden, this one is my favorite",
+        src: "gardens-3.jpeg",
+        width: 400,
+        height: 400,
+        alt: "Japanese garden",
     }
 ]
 ---
